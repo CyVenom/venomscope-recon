@@ -128,6 +128,23 @@ read -rp 'Chat ID: ' RECONFLOW_TELEGRAM_CHAT_ID; export RECONFLOW_TELEGRAM_CHAT_
 
 Then run ReconFlow in that terminal. If either variable is absent, notifications are disabled. Messages contain run/stage/status only. `.env.example` documents the variable names; ReconFlow does not load `.env` automatically. If you suspect the token leaked, revoke it through BotFather and create a new one.
 
+## Telegram commands (optional)
+
+`python -m reconflow.bot` listens for commands from your one configured chat. The scope and target are fixed when it starts, so Telegram can't change what gets scanned.
+
+```bash
+python3 -m reconflow.bot --scope scope.json --target your-domain.example --i-have-authorization
+```
+
+| Command | What it does |
+|---|---|
+| `/status` | Shows whether a scan is running or idle |
+| `/lastscan` | Summarizes the latest saved run (stage names and statuses only) |
+| `/scan` | Runs the saved scope; takes no arguments, and only one scan at a time |
+| `/help` | Lists commands |
+
+Messages from any other chat, group or sender are ignored. The template scope is refused. Replies never include findings, raw tool output or error details.
+
 ## Clone and run from Kali Linux
 
 Create the GitHub repo as **private** while this is unreleased. If you use GitHub CLI, authenticate in Kali once with `gh auth login`, then:
@@ -173,7 +190,7 @@ The automated tests use fake tools and do **not** prove the behavior of third-pa
 ## Layout
 
 ```
-reconflow/          scope validation, command builders, runner, Telegram sender, CLI
+reconflow/          scope validation, command builders, runner, Telegram sender, command bot, CLI
 examples/           expiring template scope, loopback-only scope and local sample server
 tests/              unit and fake-tool integration tests
 wordlists/          small, non-sensitive path list for local test environments
