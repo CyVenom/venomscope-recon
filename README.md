@@ -133,8 +133,8 @@ Then run ReconFlow in that terminal. If either variable is absent, notifications
 Create the GitHub repo as **private** while this is unreleased. If you use GitHub CLI, authenticate in Kali once with `gh auth login`, then:
 
 ```
-gh repo clone CyVenom/reconflow
-cd reconflow
+gh repo clone CyVenom/reconflow-cyvenom
+cd reconflow-cyvenom
 python3 -m unittest discover -s tests -v
 cp examples/scope.example.json scope.json
 nano scope.json
