@@ -1,0 +1,6 @@
+robots.txt
+sitemap.xml
+security.txt
+health
+status
+api

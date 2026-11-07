@@ -1,0 +1,13 @@
+{
+  "template": true,
+  "project": "EDIT: authorized assessment name",
+  "authorized_by": "EDIT: the person or organization that granted written permission",
+  "expires": "2099-12-31",
+  "root_domains": ["example.com"],
+  "allowed_ips": [],
+  "excluded_hosts": ["admin.example.com"],
+  "sqlmap_urls": [],
+  "nmap_ports": [80, 443, 8080],
+  "max_hosts": 50,
+  "rate_limit": 2
+}

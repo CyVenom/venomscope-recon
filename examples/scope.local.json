@@ -1,0 +1,13 @@
+{
+  "template": false,
+  "project": "Local-only sample server test",
+  "authorized_by": "Local machine owner",
+  "expires": "2099-12-31",
+  "root_domains": [],
+  "allowed_ips": ["127.0.0.1"],
+  "excluded_hosts": [],
+  "sqlmap_urls": [],
+  "nmap_ports": [8080],
+  "max_hosts": 1,
+  "rate_limit": 1
+}
